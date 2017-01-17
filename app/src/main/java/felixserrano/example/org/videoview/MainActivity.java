@@ -1,6 +1,7 @@
 package felixserrano.example.org.videoview;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -13,7 +14,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         mVideoView =(VideoView)findViewById(R.id.surface_view);
 
-        mVideoView.setVideoPath("/storage/sdcard0/Movies/video.mp4");
+        //mVideoView.setVideoPath("/storage/sdcard/media/video.mp4");
+        //mVideoView.setVideoPath("/storage/sdcard0/Movies/video.mp4");
+        mVideoView.setVideoURI(Uri.parse("http://campus.somtic.net/android/Freestyle_Motocross.mp4"));
         mVideoView.setMediaController(new MediaController(this));
         mVideoView.start();
         mVideoView.requestFocus();
